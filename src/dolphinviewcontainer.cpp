@@ -179,7 +179,7 @@ DolphinViewContainer::DolphinViewContainer(const QUrl& url, QWidget* parent) :
 
     // Initialize status bar
     m_statusBar = new DolphinStatusBar(this);
-    m_statusBar->setVisible(false);
+    m_statusBar->setVisible(true);
     m_statusBar->setAutoFillBackground(true);
     m_statusBar->setBackgroundRole(QPalette::Base);
     m_statusBar->setUrl(m_view->url());
