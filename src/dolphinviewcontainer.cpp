@@ -88,6 +88,11 @@ DolphinViewContainer::DolphinViewContainer(const QUrl& url, QWidget* parent) :
             this, &DolphinViewContainer::saveUrlCompletionMode);
 
     const GeneralSettings* settings = GeneralSettings::self();
+    
+    //background color
+    m_urlNavigator->setAutoFillBackground(true);
+    m_urlNavigator->setBackgroundRole(QPalette::Base);
+    
     m_urlNavigator->setUrlEditable(settings->editableUrl());
     m_urlNavigator->setShowFullPath(settings->showFullPath());
     m_urlNavigator->setHomeUrl(Dolphin::homeUrl());
@@ -174,6 +179,9 @@ DolphinViewContainer::DolphinViewContainer(const QUrl& url, QWidget* parent) :
 
     // Initialize status bar
     m_statusBar = new DolphinStatusBar(this);
+    m_statusBar->setVisible(false);
+    m_statusBar->setAutoFillBackground(true);
+    m_statusBar->setBackgroundRole(QPalette::Base);
     m_statusBar->setUrl(m_view->url());
     m_statusBar->setZoomLevel(m_view->zoomLevel());
     connect(m_view, &DolphinView::urlChanged,
