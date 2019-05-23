@@ -162,7 +162,7 @@ void PlacesPanel::showEvent(QShowEvent* event)
         connect(m_placesView, &KFilePlacesView::urlChanged, this, &PlacesPanel::placeActivated);
 
         QVBoxLayout* layout = new QVBoxLayout(this);
-        layout->setContentsMargins(0, 0, 0, 0);
+        layout->setContentsMargins(7, 2, 0, 0);
         layout->addWidget(m_placesView);
 
         selectClosestItem();
